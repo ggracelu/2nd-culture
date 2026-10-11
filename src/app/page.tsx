@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Instagram, Youtube, ArrowRightOutside } from "lucide-react";
+import { Instagram, Youtube, ArrowRight } from "lucide-react";
 import { NavBar } from "@/components/NavBar";
 import React from "react";
 
@@ -196,7 +196,7 @@ function UpcomingPopupsSection() {
             className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-brand-mahogany hover:underline"
           >
             View on Google Maps
-            <ArrowRightOutside className="h-3 w-3" aria-hidden="true" />
+            <ArrowRight className="h-3 w-3" aria-hidden="true" />
           </a>
         </div>
       )}

@@ -77,7 +77,7 @@ function CurrentMenuSection() {
 function UpcomingPopupsSection() {
   const [month, setMonth] = React.useState(9); // 0-index: 9 = October
   const [year, setYear] = React.useState(2026);
-  const [selectedDay, setSelectedDay] = React.useState(null);
+  const [selectedDay, setSelectedDay] = React.useState<number | null>(null);
 
   const monthNames = [
     "January", "February", "March", "April", "May", "June",

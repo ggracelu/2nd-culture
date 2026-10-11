@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+:root {
+  --brand-brick: #c12721;
+  --brand-mahogany: #581a13;
+  --brand-matcha: #616b24;
+  --brand-olive: #b0a56b;
+  --brand-sand: #dfd0b3;
+  --brand-robin: #98bab7;
+  --brand-ink: #17120f;
+  --brand-cream: #f3e9d7;
+  --card: 0 0% 100%;
+  --card-foreground: 23 14% 6%;
+  --muted-foreground: 23 10% 40%;
+  --primary: 11 65% 36%;
+  --primary-foreground: 40 35% 95%;
+  --muted: 40 30% 88%;
+  --background: 40 35% 95%;
+}
+
+html {
+  scroll-padding-top: 88px;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--brand-cream);
+  color: var(--brand-ink);
+  font-family: "Arial Nova", var(--font-inter), ui-sans-serif, system-ui,
+    -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+.font-heading {
+  font-family: var(--font-playfair), "Times New Roman", serif;
+  font-weight: 500;
+}
+
+.font-script {
+  font-family: var(--font-script), "Brush Script MT", cursive;
+}
+
+.font-body {
+  font-family: "Arial Nova", var(--font-inter), ui-sans-serif, system-ui,
+    -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+.grain {
+  position: relative;
+}
+
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  mix-blend-mode: multiply;
+  background-image: radial-gradient(
+      circle at 20% 20%,
+      rgba(193, 39, 33, 0.15),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 70% 10%,
+      rgba(97, 107, 36, 0.12),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 40% 85%,
+      rgba(152, 186, 183, 0.16),
+      transparent 58%
+    ),
+    repeating-linear-gradient(
+      105deg,
+      rgba(23, 18, 15, 0.018) 0px,
+      rgba(23, 18, 15, 0.018) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+  filter: saturate(0.95);
+}
+
+.hero-swirl {
+  background: radial-gradient(
+      1100px 650px at 20% 10%,
+      rgba(223, 208, 179, 0.85),
+      rgba(243, 233, 215, 0.6) 35%,
+      rgba(243, 233, 215, 0.25) 70%,
+      rgba(243, 233, 215, 0.05) 100%
+    ),
+    radial-gradient(
+      900px 540px at 80% 35%,
+      rgba(152, 186, 183, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      780px 520px at 60% 90%,
+      rgba(193, 39, 33, 0.18),
+      transparent 62%
+    );
+  background-size: 140% 140%;
+  animation: swirl 18s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-swirl {
+    animation: none;
+  }
+}
+
+@keyframes swirl {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 30%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.hero-bg-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--brand-cream) 0%,
+    var(--brand-sand) 35%,
+    rgba(152, 186, 183, 0.15) 70%,
+    var(--brand-cream) 100%
+  );
+}
+
+.loader {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--brand-sand);
+  border-top-color: var(--brand-brick);
+  border-radius: 50%;
+  animation: loader-spin 0.8s linear infinite;
+}
+
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-spotlight {
+  animation: spotlight 2s ease 0.75s 1 forwards;
+}

@@ -84,8 +84,8 @@ function UpcomingPopupsSection() {
     "July", "August", "September", "October", "November", "December"
   ];
 
-  const daysInMonth = (m, y) => new Date(y, m + 1, 0).getDate();
-  const firstDayIndex = (m, y) => new Date(y, m, 1).getDay(); // 0 = Sunday
+  const daysInMonth = (m: number, y: number) => new Date(y, m + 1, 0).getDate();
+  const firstDayIndex = (m: number, y: number) => new Date(y, m, 1).getDay(); // 0 = Sunday
 
   const handlePrevMonth = () => {
     if (month === 0) {

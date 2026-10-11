@@ -109,7 +109,7 @@ function UpcomingPopupsSection() {
   const isNovember = month === 10 && year === 2026;
   const isDecember = month === 11 && year === 2026;
 
-  const handleDayClick = (day) => {
+  const handleDayClick = (day: number) => {
     if (isOctober && day === 18) {
       setSelectedDay(day);
     }
